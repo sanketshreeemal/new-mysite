@@ -7,9 +7,12 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-sans);
+  --font-sans: var(--font-inter);
   --font-mono: var(--font-geist-mono);
-  --font-heading: var(--font-sans);
+  --font-heading: var(--font-newsreader);
+  --color-bone: #F9F9F9;
+  --color-carbon: #1A1A1A;
+  --color-clay: #A57C5B;
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
@@ -49,13 +52,13 @@
 }
 
 :root {
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
+  --background: #F9F9F9;
+  --foreground: #1A1A1A;
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.145 0 0);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
+  --primary: #A57C5B;
   --primary-foreground: oklch(0.985 0 0);
   --secondary: oklch(0.97 0 0);
   --secondary-foreground: oklch(0.205 0 0);
@@ -85,12 +88,12 @@
 
 .dark {
   --background: oklch(0.145 0 0);
-  --foreground: oklch(0.985 0 0);
+  --foreground: #F9F9F9;
   --card: oklch(0.205 0 0);
   --card-foreground: oklch(0.985 0 0);
   --popover: oklch(0.205 0 0);
   --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.922 0 0);
+  --primary: #A57C5B;
   --primary-foreground: oklch(0.205 0 0);
   --secondary: oklch(0.269 0 0);
   --secondary-foreground: oklch(0.985 0 0);
@@ -121,10 +124,316 @@
   * {
     @apply border-border outline-ring/50;
   }
+
   body {
     @apply bg-background text-foreground;
   }
+
   html {
     @apply font-sans;
   }
+}
+
+/* ─── Shared Tokens ─── */
+
+.section-heading {
+  font-family: var(--font-inter), sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: rgba(26, 26, 26, 0.75);
+  margin-bottom: 1.5rem;
+}
+
+/* ─── Identity Grid (Bento) Card System ─── */
+
+.bento-card {
+  border-radius: 4px;
+  border: 0.5px solid rgba(26, 26, 26, 0.2);
+  background: rgba(255, 255, 255, 0.85);
+  min-height: 200px;
+  transition: border-color 300ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Layer 2 — Liquid Glass overlay */
+.bento-glass {
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  background: rgba(249, 249, 249, 0.7);
+  transition: background 300ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Hover: glass darkens, no movement */
+.bento-card:hover .bento-glass {
+  background: rgba(249, 249, 249, 0.85);
+}
+
+/* Layer 3 — Typography */
+.bento-badge {
+  font-family: var(--font-inter), sans-serif;
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #A57C5B;
+  font-weight: 700;
+}
+
+.bento-title {
+  font-family: var(--font-newsreader), serif;
+  font-size: 1.5rem;
+  line-height: 1.1;
+  color: #1A1A1A;
+  transition: opacity 300ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.bento-subtitle {
+  font-size: 0.72rem;
+  line-height: 1.4;
+  color: rgba(26, 26, 26, 0.6);
+  transition: color 300ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Hover text prominence */
+.bento-card:hover .bento-title {
+  opacity: 1;
+}
+
+.bento-card:hover .bento-subtitle {
+  color: rgba(26, 26, 26, 0.75);
+}
+
+/* ─── Timeline System ─── */
+.timeline-wrapper {
+  max-width: 1100px;
+  margin: 0 auto;
+  position: relative;
+  padding: 20px 0;
+}
+
+.timeline-spine {
+  position: absolute;
+  left: 50%;
+  top: 80px;
+  bottom: 120px;
+  width: 1px;
+  /* background-color → inline style in Timeline.tsx */
+  transform: translateX(-50%);
+  z-index: 5;
+}
+
+.timeline-year-marker {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: var(--color-bone);
+  padding: 4px 12px;
+  font-family: var(--font-heading), serif;
+  font-style: italic;
+  font-size: 0.8rem;
+  /* color → inline style in Timeline.tsx */
+  z-index: 15;
+}
+
+.timeline-track-labels {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  width: 100%;
+  position: sticky;
+  top: 60px;
+  z-index: 30;
+  pointer-events: none;
+  margin-bottom: 40px;
+}
+
+@media (min-width: 1000px) {
+  .timeline-track-labels {
+    gap: 80px;
+  }
+}
+
+.timeline-track-label {
+  width: 42%;
+  text-align: center;
+  font-family: var(--font-sans), sans-serif;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  /* color → inline style in Timeline.tsx */
+  font-weight: 600;
+}
+
+@media (min-width: 1000px) {
+  .timeline-track-label {
+    width: 450px;
+  }
+}
+
+.timeline-year-block {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  overflow: visible;
+}
+
+@media (min-width: 1000px) {
+  .timeline-year-block {
+    gap: 80px;
+  }
+}
+
+.timeline-lane {
+  width: 42%;
+  position: relative;
+  height: 100%;
+  overflow: visible;
+}
+
+@media (min-width: 1000px) {
+  .timeline-lane {
+    width: 450px;
+  }
+}
+
+.timeline-card {
+  position: absolute;
+  border-radius: 4px;
+  border: 0.5px solid rgba(26, 26, 26, 0.1);
+  background: rgba(255, 255, 255, 0.85);
+  padding: 16px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  z-index: 10;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  word-wrap: break-word;
+  overflow: hidden;
+}
+
+.timeline-card.active {
+  border-color: var(--color-clay);
+  background: rgba(165, 124, 91, 0.04);
+}
+
+/* ─── Active Pulse Animation ─── */
+@keyframes active-pulse {
+
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(74, 222, 128, 0.5);
+    transform: scale(1);
+  }
+
+  50% {
+    box-shadow: 0 0 0 4px rgba(74, 222, 128, 0);
+    transform: scale(1.3);
+  }
+}
+
+.timeline-card.wide {
+  width: 100%;
+  left: 0;
+}
+
+.timeline-card.split-left {
+  width: calc(50% - 8px);
+  left: 0;
+}
+
+.timeline-card.split-right {
+  width: calc(50% - 8px);
+  right: 0;
+}
+
+.timeline-badge {
+  font-family: var(--font-sans), sans-serif;
+  font-size: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-clay);
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.timeline-title {
+  font-family: var(--font-heading), serif;
+  font-size: 1rem;
+  margin-bottom: 4px;
+  line-height: 1.1;
+  color: var(--color-carbon);
+}
+
+@media (min-width: 1000px) {
+  .timeline-title {
+    font-size: 1.1rem;
+  }
+}
+
+.timeline-desc {
+  font-family: var(--font-sans), sans-serif;
+  font-size: 0.62rem;
+  line-height: 1.4;
+  color: rgba(26, 26, 26, 0.6);
+  flex-grow: 1;
+}
+
+@media (min-width: 1000px) {
+  .timeline-desc {
+    font-size: 0.68rem;
+  }
+}
+
+.beat-container {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 0;
+  height: 0;
+  z-index: 25;
+}
+
+.beat-dot {
+  width: 6px;
+  height: 6px;
+  background: var(--color-carbon);
+  border-radius: 50%;
+  border: 2px solid var(--color-bone);
+  box-shadow: 0 0 0 1px rgba(26, 26, 26, 0.1);
+}
+
+.beat-label {
+  position: absolute;
+  font-family: var(--font-sans), sans-serif;
+  font-size: 0.7rem;
+  font-weight: 600;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  color: var(--color-carbon);
+}
+
+.beat-label::before,
+.beat-label::after {
+  content: '';
+  width: 12px;
+  height: 1px;
+  background: rgba(26, 26, 26, 0.15);
+  margin: 0 10px;
+}
+
+.label-l {
+  flex-direction: row-reverse;
+  right: 8px;
+}
+
+.label-r {
+  flex-direction: row;
+  left: 8px;
 }
