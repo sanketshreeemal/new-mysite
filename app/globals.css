@@ -138,7 +138,7 @@
 
 .section-heading {
   font-family: var(--font-inter), sans-serif;
-  font-size: 0.85rem;
+  font-size: 1rem;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.2em;
@@ -241,7 +241,7 @@
   gap: 40px;
   width: 100%;
   position: sticky;
-  top: 60px;
+  top: 20px;
   z-index: 30;
   pointer-events: none;
   margin-bottom: 40px;
@@ -301,7 +301,7 @@
 .timeline-card {
   position: absolute;
   border-radius: 4px;
-  border: 0.5px solid rgba(26, 26, 26, 0.1);
+  border: 0.5px solid rgba(26, 26, 26, 0.2);
   background: rgba(255, 255, 255, 0.85);
   padding: 16px;
   backdrop-filter: blur(12px);
@@ -316,7 +316,7 @@
 
 .timeline-card.active {
   border-color: var(--color-clay);
-  background: rgba(165, 124, 91, 0.04);
+  background: #fcf6f0;
 }
 
 /* ─── Active Pulse Animation ─── */
@@ -400,12 +400,7 @@
 }
 
 .beat-dot {
-  width: 6px;
-  height: 6px;
-  background: var(--color-carbon);
-  border-radius: 50%;
-  border: 2px solid var(--color-bone);
-  box-shadow: 0 0 0 1px rgba(26, 26, 26, 0.1);
+  /* Dimensions and colors handled in Timeline.tsx */
 }
 
 .beat-label {
@@ -430,10 +425,113 @@
 
 .label-l {
   flex-direction: row-reverse;
-  right: 8px;
 }
 
 .label-r {
   flex-direction: row;
-  left: 8px;
+}
+
+/* ─── Now Peek (Hero Integrated) ─── */
+.now-peek {
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 0.5px solid rgba(26, 26, 26, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  max-width: 400px;
+}
+
+.now-peek-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.now-peek-subtitle {
+  font-family: var(--font-heading), serif;
+  font-size: 1rem;
+  font-style: italic;
+  color: var(--color-carbon);
+  opacity: 0.9;
+}
+
+.now-peek-pill {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--color-bone);
+  border: 0.5px solid rgba(74, 222, 128, 0.25);
+  border-radius: 999px;
+  padding: 3px 8px 3px 6px;
+}
+
+.now-peek-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #4ade80;
+  box-shadow: 0 0 0 0 rgba(74, 222, 128, 0.5);
+  animation: active-pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.now-peek-pill-label {
+  font-family: var(--font-sans), sans-serif;
+  font-size: 0.55rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #4ade80;
+}
+
+.now-peek-timestamp {
+  font-family: var(--font-sans), sans-serif;
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: rgba(26, 26, 26, 0.4);
+  margin-top: -0.25rem;
+}
+
+.now-peek-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.now-peek-item {
+  font-family: var(--font-sans), sans-serif;
+  font-size: 0.8rem;
+  line-height: 1.4;
+  color: rgba(26, 26, 26, 0.7);
+  position: relative;
+  padding-left: 1.25rem;
+}
+
+.now-peek-item::before {
+  content: "—";
+  position: absolute;
+  left: 0;
+  color: var(--color-clay);
+  opacity: 0.5;
+}
+
+.now-peek-cta {
+  font-family: var(--font-sans), sans-serif;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-clay);
+  text-decoration: none;
+  margin-top: 0.5rem;
+  transition: opacity 200ms ease;
+  width: fit-content;
+}
+
+.now-peek-cta:hover {
+  opacity: 0.7;
 }

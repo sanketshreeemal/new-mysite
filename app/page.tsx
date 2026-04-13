@@ -1,6 +1,8 @@
 import Hero from "@/components/home/Hero";
 import BentoGrid from "@/components/home/BentoGrid";
 import Timeline from "@/components/home/Timeline";
+import Collage from "@/components/home/Collage";
+import CuratedInterests from "@/components/home/CuratedInterests";
 
 export default function Home() {
   return (
@@ -13,6 +15,8 @@ export default function Home() {
         <Hero />
         <BentoGrid />
         <Timeline />
+        <Collage />
+        <CuratedInterests />
       </main>
     </div>
   );

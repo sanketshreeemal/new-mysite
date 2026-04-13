@@ -48,7 +48,7 @@ export const timelineData: TimelineYearBlock[] = [
         lane: "institutional",
         type: "wide",
         active: true,
-        badge: "Analyst",
+        badge: "Specialist",
         title: "Rosenberg Research",
         description: "Macro research with a bearish/contrarian tilt, publishing thought pieces on macroeconomic trends.",
         topOffset: 60
@@ -93,7 +93,7 @@ export const timelineData: TimelineYearBlock[] = [
         lane: "institutional",
         type: "wide",
         active: false,
-        badge: "Senior Analyst",
+        badge: "Senior Portfolio Analyst",
         title: "Fundthrough",
         description: "Managed the performance and lending activities of the entire ~$100M portfolio.",
         topOffset: 90,
@@ -103,8 +103,8 @@ export const timelineData: TimelineYearBlock[] = [
         id: "pokerup",
         lane: "venture",
         type: "wide",
-        active: false,
-        badge: "Creator",
+        active: true,
+        badge: "Builder",
         title: "PokerUp",
         description: "Created a real-time multi-player poker application to track performance across games.",
         topOffset: 120
@@ -126,8 +126,8 @@ export const timelineData: TimelineYearBlock[] = [
         id: "urbanleases",
         lane: "venture",
         type: "wide",
-        active: false,
-        badge: "Creator",
+        active: true,
+        badge: "Builder",
         title: "UrbanLeases",
         description: "Created an application for landlords to track their real estate portfolio performance, operations, and more.",
         topOffset: 80
@@ -164,7 +164,7 @@ export const timelineData: TimelineYearBlock[] = [
         lane: "institutional",
         type: "wide",
         active: false,
-        badge: "Analyst",
+        badge: "Investment Strategy Analyst",
         title: "Cadillac Fairview",
         description: "Led strategic planning workflows for CF's industrial and retail asset portfolios ($18B) and developed leasing models to assess portfolio risk and return sensitivity. Created a risk monitoring ERM tool flagged across 32 metrics.",
         topOffset: 0,
@@ -214,7 +214,7 @@ export const timelineData: TimelineYearBlock[] = [
         lane: "institutional",
         type: "wide",
         active: false,
-        badge: "Contract Analyst",
+        badge: "Equity Research Analyst",
         title: "British Columbia Investments (BCI)",
         description: "Investment research directly supported deployment of ~$450 million across global thematic equity strategies. Pitched and built out the E-merging Billions theme coverage.",
         topOffset: 40,
@@ -225,7 +225,7 @@ export const timelineData: TimelineYearBlock[] = [
         lane: "venture",
         type: "wide",
         active: false,
-        badge: "External Consultant",
+        badge: "Owner-Operator",
         title: "Royal Embassy Hospitality",
         description: "Spearheaded restructuring of Royal Embassy Hotel during COVID-19, turned around profitability and viability of the asset from recurring losses to 13% net margins. Reached pre-COVID occupancy of 74%.",
         topOffset: -70
@@ -248,7 +248,7 @@ export const timelineData: TimelineYearBlock[] = [
         id: "grad",
         label: "Undergrad Graduation",
         side: "right",
-        isMilestone: false,
+        isMilestone: true,
         topOffset: 130
       }
     ]
