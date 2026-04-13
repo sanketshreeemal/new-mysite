@@ -18,7 +18,7 @@ export default function BookCard({ book, index }: BookCardProps) {
       className="group relative flex flex-col md:flex-row w-full gap-4 p-4 sm:p-6 rounded-[4px] border-[0.5px] border-carbon/10 bg-white/50 backdrop-blur-md hover:bg-white/80 transition-all duration-500"
     >
       {/* Left Column — Book Cover (20%) */}
-      <div className="w-full md:w-1/5 flex-shrink-0">
+      <div className="w-2/3 sm:w-1/4 md:w-1/5 flex-shrink-0 mx-auto md:mx-0 mb-4 md:mb-0">
         <div className="relative aspect-[3/4] w-full rounded-[2px] shadow-lg overflow-hidden flex flex-col items-center justify-center p-1 bg-gradient-to-br from-bone to-clay/10 border-[0.5px] border-carbon/20">
           {book.coverUrl ? (
             <img

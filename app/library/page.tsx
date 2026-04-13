@@ -1,10 +1,15 @@
+"use client";
+
+import { useState } from "react";
 import { booksData, otherBooksData } from "@/config/books";
 import BookCard from "@/components/library/BookCard";
+import ShortFormGrid from "@/components/library/ShortFormGrid";
 import Link from "next/link";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, BookOpen, LayoutGrid } from "lucide-react";
 
 export default function LibraryPage() {
   const books = booksData;
+  const [activeTab, setActiveTab] = useState<"long" | "short">("short");
 
   return (
     <div className="relative min-h-screen bg-bone">
@@ -37,46 +42,83 @@ export default function LibraryPage() {
           </p>
         </header>
 
-        {/* Library Grid / List */}
-        <div className="flex flex-col gap-8 sm:gap-12">
-          {books.map((book, index) => (
-            <BookCard key={book.id} book={book} index={index} />
-          ))}
+        {/* Tabs */}
+        <div className="flex items-center gap-2 mb-12 sm:mb-16 border-b border-carbon/10 pb-4">
+          <button
+            onClick={() => setActiveTab("long")}
+            className={`font-sans text-sm font-semibold tracking-wider flex items-center gap-2 px-4 py-2 rounded-full transition-all duration-300 ${
+              activeTab === "long"
+                ? "bg-carbon text-bone"
+                : "text-carbon/50 hover:text-carbon hover:bg-carbon/5"
+            }`}
+          >
+            <BookOpen size={16} />
+            Long Form
+          </button>
+          <button
+            onClick={() => setActiveTab("short")}
+            className={`font-sans text-sm font-semibold tracking-wider flex items-center gap-2 px-4 py-2 rounded-full transition-all duration-300 ${
+              activeTab === "short"
+                ? "bg-carbon text-bone"
+                : "text-carbon/50 hover:text-carbon hover:bg-carbon/5"
+            }`}
+          >
+            <LayoutGrid size={16} />
+            Short Form
+          </button>
         </div>
 
-        {/* Other Books Grid */}
-        <div className="mt-24 pt-8 border-t border-carbon/5">
-          <h2 className="font-heading text-3xl text-carbon mb-8">Other Books</h2>
-          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4 sm:gap-6">
-            {otherBooksData.map((book) => (
-              <div
-                key={book.id}
-                className="relative aspect-[3/4] w-full rounded-[2px] shadow-sm overflow-hidden flex flex-col items-center justify-center p-3 bg-gradient-to-br from-white/60 to-clay/5 border-[0.5px] border-carbon/10 hover:border-carbon/20 hover:shadow-md backdrop-blur-sm transition-all duration-300 group"
-              >
-                {book.coverUrl ? (
-                  <img
-                    src={book.coverUrl}
-                    alt={book.title}
-                    className="w-full h-full object-cover"
-                  />
-                ) : (
-                  <div className="flex flex-col items-center justify-center text-center gap-2 h-full w-full">
-                    <span className="font-heading text-xs sm:text-sm text-carbon/70 group-hover:text-carbon transition-colors leading-snug px-2">
-                      {book.title}
-                    </span>
-                  </div>
-                )}
-                {/* Subtle spine shadow */}
-                <div className="absolute left-0 inset-y-0 w-3 bg-gradient-to-r from-black-[0.03] to-transparent pointer-events-none" />
+        {/* Content Area */}
+        <div className="min-h-[50vh]">
+          {activeTab === "long" ? (
+            <div className="animate-in fade-in slide-in-from-bottom-4 duration-700">
+              {/* Library Grid / List */}
+              <div className="flex flex-col gap-8 sm:gap-12">
+                {books.map((book, index) => (
+                  <BookCard key={book.id} book={book} index={index} />
+                ))}
               </div>
-            ))}
-          </div>
+
+              {/* Other Books Grid */}
+              <div className="mt-24 pt-8 border-t border-carbon/5">
+                <h2 className="font-heading text-3xl text-carbon mb-8">Other Books</h2>
+                <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4 sm:gap-6">
+                  {otherBooksData.map((book) => (
+                    <div
+                      key={book.id}
+                      className="relative aspect-[3/4] w-full rounded-[2px] shadow-sm overflow-hidden flex flex-col items-center justify-center p-3 bg-gradient-to-br from-white/60 to-clay/5 border-[0.5px] border-carbon/10 hover:border-carbon/20 hover:shadow-md backdrop-blur-sm transition-all duration-300 group"
+                    >
+                      {book.coverUrl ? (
+                        <img
+                          src={book.coverUrl}
+                          alt={book.title}
+                          className="w-full h-full object-cover"
+                        />
+                      ) : (
+                        <div className="flex flex-col items-center justify-center text-center gap-2 h-full w-full">
+                          <span className="font-heading text-xs sm:text-sm text-carbon/70 group-hover:text-carbon transition-colors leading-snug px-2">
+                            {book.title}
+                          </span>
+                        </div>
+                      )}
+                      {/* Subtle spine shadow */}
+                      <div className="absolute left-0 inset-y-0 w-3 bg-gradient-to-r from-black-[0.03] to-transparent pointer-events-none" />
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          ) : (
+            <div className="animate-in fade-in slide-in-from-bottom-4 duration-700">
+              <ShortFormGrid />
+            </div>
+          )}
         </div>
 
         {/* Footer info (optional) */}
         <footer className="mt-24 pt-8 border-t border-carbon/5 flex justify-center">
           <p className="font-sans text-[0.65rem] uppercase tracking-[0.2em] text-carbon/30">
-            More volumes to be added as I continue to explore.
+            More content to be added as I continue to explore.
           </p>
         </footer>
       </main>

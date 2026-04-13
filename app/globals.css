@@ -316,7 +316,7 @@
 
 .timeline-card.active {
   border-color: var(--color-clay);
-  background: #fcf6f0;
+  background: #f7f1ec;
 }
 
 /* ─── Active Pulse Animation ─── */
