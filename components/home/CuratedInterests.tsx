@@ -62,7 +62,7 @@ const panels = [
     heading: "I Read a Lot",
     subtitle: "Books that have shaped my thinking",
     cta: "My Library",
-    href: "/books",
+    href: "/library",
   },
   {
     id: "travel",
