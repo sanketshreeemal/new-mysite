@@ -9,7 +9,10 @@
 ### Phase 1: Core Navigation & Infrastructure
 - [ ] **Fix Navigation Bar Dummy Links** ([`Navigation.tsx`](file:///Users/sanketshreemal/Documents/Projects/Cursor/new-mysite/components/Navigation.tsx))
   - [x] Connect `Now` link to `/now`
-  - [ ] Connect `Interests` link to `/library`
+  - [x] Connect `Interests` link to interactive dropdown with sub-routes:
+    - [x] 📖 **Reading** -> [`/interests/library`](file:///Users/sanketshreemal/Documents/Projects/Cursor/new-mysite/app/interests/library/page.tsx)
+    - [x] ✈️ **Travelling** -> [`/interests/travel`](file:///Users/sanketshreemal/Documents/Projects/Cursor/new-mysite/app/interests/travel/page.tsx)
+    - [x] 💡 **Thinking** -> [`/interests/ideas`](file:///Users/sanketshreemal/Documents/Projects/Cursor/new-mysite/app/interests/ideas/page.tsx)
   - [ ] Connect `About` link to smooth scroll `#identity-grid` or dedicated about section
   - [ ] Connect `Contact` link to footer anchor or email trigger
 - [ ] **Global Footer & Social Links**
