@@ -163,14 +163,7 @@ export default function Timeline() {
 
   return (
     <section id="parallel-pulse" className="w-full mt-24">
-      {/* Section heading — matches project convention */}
-      <div className="w-full pb-4">
-        <p className="section-heading">Parallel Pulse</p>
-        <p className="font-sans text-xs text-carbon/50 max-w-lg leading-relaxed">
-          Mapping professional bandwidth: institutional systems versus
-          high-velocity venture building.
-        </p>
-      </div>
+      {/* Section heading */}
 
       {/* Timeline body */}
       <div className="timeline-wrapper">
@@ -201,11 +194,9 @@ export default function Timeline() {
             ))}
           </div>
 
-          {/* Fade/Blur Gradient at the bottom 
-              Moved OUTSIDE overflow-hidden wrapper to allow horizontal bleeding (110vw limitlessly blurring the pill edges) 
-          */}
+          {/* Fade/Blur Gradient at the bottom */}
           <div
-            className={`absolute bottom-0 left-1/2 -translate-x-1/2 w-[110vw] h-[120px] bg-gradient-to-t from-[#F9F9F9] via-[#F9F9F9]/90 to-transparent pointer-events-none z-40 transition-opacity duration-[1500ms] ${isExpanded ? "opacity-0" : "opacity-100 backdrop-blur-[3px]"
+            className={`absolute bottom-0 left-1/2 -translate-x-1/2 w-full max-w-[100vw] scale-x-[1.15] md:scale-x-100 md:w-[110vw] h-[120px] bg-gradient-to-t from-[#F9F9F9] via-[#F9F9F9]/90 to-transparent pointer-events-none z-40 transition-opacity duration-[1500ms] ${isExpanded ? "opacity-0" : "opacity-100 backdrop-blur-[3px]"
               }`}
           />
         </div>

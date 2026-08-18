@@ -5,7 +5,7 @@ import { booksData, otherBooksData } from "@/config/books";
 import BookCard from "@/components/library/BookCard";
 import ShortFormGrid from "@/components/library/ShortFormGrid";
 import Link from "next/link";
-import { ArrowLeft, BookOpen, LayoutGrid } from "lucide-react";
+import { ArrowLeft, BookCheck, LayoutGrid } from "lucide-react";
 
 export default function LibraryPage() {
   const books = booksData;
@@ -19,49 +19,38 @@ export default function LibraryPage() {
         aria-hidden="true"
       />
 
-      <main className="relative z-10 w-full max-w-7xl mx-auto px-6 sm:px-12 md:px-16 lg:w-[85%] py-16 md:py-24">
-        {/* Navigation */}
-        <Link
-          href="/"
-          className="inline-flex items-center gap-2 font-sans text-[0.7rem] font-bold uppercase tracking-widest text-carbon/40 hover:text-clay transition-colors duration-200 mb-12 sm:mb-16"
-        >
-          <ArrowLeft size={14} />
-          Back to Home
-        </Link>
+      <main className="relative z-10 w-full max-w-7xl mx-auto px-6 sm:px-12 md:px-16 lg:w-[85%] pt-6 pb-24 md:pt-10 md:pb-32">
 
         {/* Header */}
-        <header className="max-w-2xl mb-16 sm:mb-24">
+        <header className="max-w-2xl mb-6 sm:mb-12">
           <h1 className="font-heading text-4xl sm:text-5xl lg:text-6xl font-normal tracking-tight text-carbon leading-[1.1] mb-6">
             Library
           </h1>
-          <p className="font-sans text-base sm:text-lg text-carbon/70 leading-relaxed">
-            A curated collection of thoughts and insights from the volumes that have shaped my perspective.
-            <span className="block mt-4 text-clay italic text-sm sm:text-base">
-              &ldquo;One grain of sand is not a mountain, but eventually, after enough grains, a mountain exists.&rdquo;
-            </span>
-          </p>
+
+          <span className="block mt-4 text-clay italic text-sm sm:text-base">
+            &ldquo;One grain of sand is not a mountain, but eventually, <br />after enough grains, a mountain exists.&rdquo;
+          </span>
+
         </header>
 
         {/* Tabs */}
-        <div className="flex items-center gap-2 mb-12 sm:mb-16 border-b border-carbon/10 pb-4">
+        <div className="flex items-center gap-2 mb-12 sm:mb-16 border-b border-carbon/20 pb-4">
           <button
             onClick={() => setActiveTab("long")}
-            className={`font-sans text-sm font-semibold tracking-wider flex items-center gap-2 px-4 py-2 rounded-full transition-all duration-300 ${
-              activeTab === "long"
-                ? "bg-carbon text-bone"
-                : "text-carbon/50 hover:text-carbon hover:bg-carbon/5"
-            }`}
+            className={`font-sans text-sm font-semibold tracking-wider flex items-center gap-2 px-4 py-2 rounded-full transition-all duration-300 ${activeTab === "long"
+              ? "bg-carbon text-bone"
+              : "text-carbon/50 hover:text-carbon hover:bg-carbon/5"
+              }`}
           >
-            <BookOpen size={16} />
+            <BookCheck size={16} />
             Long Form
           </button>
           <button
             onClick={() => setActiveTab("short")}
-            className={`font-sans text-sm font-semibold tracking-wider flex items-center gap-2 px-4 py-2 rounded-full transition-all duration-300 ${
-              activeTab === "short"
-                ? "bg-carbon text-bone"
-                : "text-carbon/50 hover:text-carbon hover:bg-carbon/5"
-            }`}
+            className={`font-sans text-sm font-semibold tracking-wider flex items-center gap-2 px-4 py-2 rounded-full transition-all duration-300 ${activeTab === "short"
+              ? "bg-carbon text-bone"
+              : "text-carbon/50 hover:text-carbon hover:bg-carbon/5"
+              }`}
           >
             <LayoutGrid size={16} />
             Short Form
@@ -114,13 +103,6 @@ export default function LibraryPage() {
             </div>
           )}
         </div>
-
-        {/* Footer info (optional) */}
-        <footer className="mt-24 pt-8 border-t border-carbon/5 flex justify-center">
-          <p className="font-sans text-[0.65rem] uppercase tracking-[0.2em] text-carbon/30">
-            More content to be added as I continue to explore.
-          </p>
-        </footer>
       </main>
     </div>
   );

@@ -21,7 +21,7 @@ export default function NowPeek() {
     <div className="flex flex-col items-start gap-3 w-full max-w-lg">
       {/* ── Header ── */}
       <div className="w-full">
-        <p className="section-heading !mb-1">What I&rsquo;m Up To</p>
+        <p className="section-heading !mb-1">What I&rsquo;m Up To /NOW</p>
 
         {/* ── Timestamp ── */}
         <p className="font-sans text-xs text-carbon/60 italic mt-1">
@@ -33,8 +33,8 @@ export default function NowPeek() {
       <ul className="flex flex-col gap-2 mt-2">
         {current.home.map((item, i) => (
           <li key={i} className="flex items-start gap-1">
-            <span className="text-clay text-sm flex-shrink-0 mt-0.5">•</span>
-            <span className="font-sans text-sm md:text-[0.9rem] text-carbon/80 leading-relaxed">
+            <span className="text-clay text-md flex-shrink-0 mt-0.5">•</span>
+            <span className="font-sans text-md md:text-[0.9rem] text-carbon/80 leading-relaxed">
               {item}
             </span>
           </li>

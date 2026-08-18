@@ -5,21 +5,22 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="w-full grid grid-cols-1 md:grid-cols-[1fr_0.65fr] gap-8 md:gap-12 items-center py-16 md:py-24"
+      className="w-full grid grid-cols-1 md:grid-cols-[1fr_0.65fr] gap-8 md:gap-12 items-center py-6 md:py-10"
     >
       {/* Left Column — Text */}
-      <div className="flex flex-col gap-5">
-        {/* Name */}
-        <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-normal tracking-tight text-carbon leading-[1.1]">
-          Sanket Shreemal
-        </h1>
+      <div className="flex flex-col gap-2">
 
         {/* Tagline */}
-        <p className="font-sans text-sm md:text-base text-carbon/80 leading-relaxed">
+        <p className="font-heading font-semibold text-2xl md:text-2xl text-carbon/80 leading-relaxed">
           Allocating{" "}
           <span className="text-clay font-semibold">Time</span>,{" "}
           <span className="text-clay font-semibold">Tokens</span>,{" "}
           <span className="text-clay font-semibold">Capital</span>
+        </p>
+
+        {/* Description */}
+        <p className="font-sans text-md md:text-lg text-carbon/80 mb-4 leading-relaxed max-w-lg">
+          Technology founder and institutional investor. I like tinkering with fringe ideas and building things in the pursuit of greatness.
         </p>
 
         {/* Location */}

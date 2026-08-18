@@ -421,18 +421,10 @@ export default function CuratedInterests() {
   return (
     <section id="curated-interests" className="w-full mt-28">
       {/* ── Section heading — matches project convention ── */}
-      <div className="w-full pb-6">
-        <p className="section-heading">Curated Interests</p>
-        <p
-          style={{
-            fontFamily: "var(--font-sans), sans-serif",
-            fontSize: "0.75rem",
-            color: "rgba(26, 26, 26, 0.50)",
-            maxWidth: "32rem",
-            lineHeight: 1.55,
-          }}
-        >
-          Pockets of curiosity that shape how I see — and build for — the world.
+      <div className="w-full pb-8">
+        <p className="section-heading">Curated /Interests</p>
+        <p className="section-subheading">
+          Pockets of curiosity that shape how I interact with the world.
         </p>
       </div>
 

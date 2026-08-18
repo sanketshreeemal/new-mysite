@@ -78,7 +78,7 @@ Implementation: Driven by config/timeline.ts.
 
 D. The Personal Grid (/components/home/PersonalSection.tsx)
 
-3-column minimalist grid:
+3-column grid:
 
 "I read a lot" -> /books
 

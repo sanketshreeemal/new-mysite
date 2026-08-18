@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Image from 'next/image';
 
 const collageItems = [
   {
@@ -11,24 +12,27 @@ const collageItems = [
     width: '20%', // Adjusted width for cut off
     height: '30%', // +20% visually
     zIndex: 10,
+    imageUrl: '/images/scene.jpg',
   },
   {
     id: 2,
     color: '#6B705C', // Olive Green
-    left: '12%',
-    top: '60%',
-    width: '8%',
-    height: '30%',
+    left: '8%',
+    top: '57%',
+    width: '10%',
+    height: '38%',
     zIndex: 20,
+    imageUrl: '/images/fountian-port.jpg',
   },
   {
     id: 3,
     color: '#D4A373', // Gold / Muted Yellow
     left: '24%',
-    top: '34%',
+    top: '28%',
     width: '14%',
-    height: '18%',
+    height: '22%',
     zIndex: 10,
+    imageUrl: '/images/grass-landscape.jpg',
   },
   {
     id: 4,
@@ -38,6 +42,7 @@ const collageItems = [
     width: '12%',
     height: '36%',
     zIndex: 20,
+    imageUrl: '/images/mountain-port.jpg',
   },
   {
     id: 5,
@@ -47,6 +52,7 @@ const collageItems = [
     width: '18%',
     height: '60%',
     zIndex: 30,
+    imageUrl: '/images/sanket.jpg',
   },
   {
     id: 6,
@@ -56,15 +62,27 @@ const collageItems = [
     width: '10%',
     height: '46%',
     zIndex: 20,
+    imageUrl: '/images/horses-port.jpg',
   },
   {
     id: 7,
+    color: '#D4A373', // Gold / Muted Yellow
+    left: '82%',
+    top: '29%',
+    width: '14%',
+    height: '28%',
+    zIndex: 10,
+    imageUrl: '/images/sunset-land.jpg',
+  },
+  {
+    id: 8,
     color: '#6D597A', // Muted Purple
     left: '80%',
-    top: '58%',
+    top: '65%',
     width: '20%',
     height: '38%',
     zIndex: 10,
+    imageUrl: '/images/river-land.jpg',
   },
 ];
 
@@ -79,7 +97,7 @@ export default function Collage() {
         {collageItems.map((item) => (
           <div
             key={item.id}
-            className="absolute rounded-[4px] border-[0.5px] bg-white/85"
+            className="absolute rounded-[4px] border-[0.5px] bg-white/85 overflow-hidden"
             style={{
               left: item.left,
               top: item.top,
@@ -89,7 +107,15 @@ export default function Collage() {
               borderColor: item.color,
             }}
           >
-            {/* Empty container as requested - no gradients, just the unified card look */}
+            {item.imageUrl ? (
+              <Image
+                src={item.imageUrl}
+                alt={`Collage image ${item.id}`}
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 50vw, 25vw"
+              />
+            ) : null}
           </div>
         ))}
       </div>

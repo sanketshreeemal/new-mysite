@@ -28,6 +28,14 @@ export const shortFormData: ShortFormContent[] = [
     notes: "Blog Post"
   },
   {
+    id: "onbeing",
+    title: "Janine Benyus - Biomimicry, an Operating Manual for Earthlings",
+    author: "On Being",
+    year: 2023,
+    type: "audio",
+    notes: "Podcast"
+  },
+  {
     id: "intergenerational-transmission",
     title: "The Intergenerational Transmission of Cultural Capital",
     author: "John Mohr & Paul DiMaggio",
@@ -42,6 +50,14 @@ export const shortFormData: ShortFormContent[] = [
     year: 1932,
     type: "text",
     notes: "Essay"
+  },
+  {
+    id: "world2",
+    title: "Napoleon Pt1 & Pt2",
+    author: "How to Take Over the World",
+    year: 2024,
+    type: "audio",
+    notes: "Podcast"
   },
   {
     id: "letter-from-utopia",
@@ -60,6 +76,14 @@ export const shortFormData: ShortFormContent[] = [
     notes: "Essay"
   },
   {
+    id: "iltb2",
+    title: "Jeremy Giffon - Special Situations in Private Markets",
+    author: "Invest Like the Best",
+    year: 2023,
+    type: "audio",
+    notes: "Podcast"
+  },
+  {
     id: "what-is-strategy",
     title: "What is Strategy?",
     author: "Michael Porter",
@@ -74,6 +98,14 @@ export const shortFormData: ShortFormContent[] = [
     year: 1998,
     type: "text",
     notes: "Paper"
+  },
+  {
+    id: "acq",
+    title: "LVMH",
+    author: "Acquired",
+    year: 2023,
+    type: "audio",
+    notes: "Podcast"
   },
   {
     id: "blue-ocean-strategy",
@@ -100,14 +132,6 @@ export const shortFormData: ShortFormContent[] = [
     notes: "Tanner Lecture"
   },
   {
-    id: "huberman-sleep",
-    title: "Master Your Sleep & Be More Alert When Awake",
-    author: "HUBERMAN LAB",
-    year: 2021,
-    type: "audio",
-    notes: "Podcast"
-  },
-  {
     id: "invisible-inequality",
     title: "Invisible Inequality: Social Class and Childrearing in Black & White Families",
     author: "Annette Lareau",
@@ -124,12 +148,28 @@ export const shortFormData: ShortFormContent[] = [
     notes: "Resignation Letter"
   },
   {
+    id: "world1",
+    title: "Genghis Khan Pt1 & Pt2",
+    author: "How to Take Over the World",
+    year: 2023,
+    type: "audio",
+    notes: "Podcast"
+  },
+  {
     id: "relativity-of-wrong",
     title: "The Relativity of Wrong",
     author: "Isaac Asimov",
     year: 1989,
     type: "text",
     notes: "Essay"
+  },
+  {
+    id: "iltb1",
+    title: "Boyd Varty - The Art of Tracking",
+    author: "Invest Like the Best",
+    year: 2018,
+    type: "audio",
+    notes: "Podcast"
   },
   {
     id: "principles-psychology-habit",
@@ -148,14 +188,6 @@ export const shortFormData: ShortFormContent[] = [
     notes: "Creative Thinking & Walking"
   },
   {
-    id: "death-sex-money-karl",
-    title: "We're not going to have Karl again",
-    author: "DEATH, SEX, & MONEY",
-    year: "2020",
-    type: "audio",
-    notes: "Podcast Episode"
-  },
-  {
     id: "mundanity-of-excellence",
     title: "The Mundanity of Excellence",
     author: "Daniel Chambliss",
@@ -172,6 +204,14 @@ export const shortFormData: ShortFormContent[] = [
     notes: "Blog Post"
   },
   {
+    id: "tkp",
+    title: "Danny Mayer: Hospitality and Humanity",
+    author: "The Knowledge Project",
+    year: 2021,
+    type: "audio",
+    notes: "Podcast"
+  },
+  {
     id: "forms-of-capital",
     title: "The Forms of Capital",
     author: "Pierre Bourdieu",
@@ -186,6 +226,14 @@ export const shortFormData: ShortFormContent[] = [
     year: 1958,
     type: "text",
     notes: "Paper"
+  },
+  {
+    id: "phil",
+    title: "Kierkegaard on Anxiety",
+    author: "Philosophize This!",
+    year: 2023,
+    type: "audio",
+    notes: "Podcast"
   },
   {
     id: "mathematicians-lament",
@@ -212,6 +260,14 @@ export const shortFormData: ShortFormContent[] = [
     notes: "Paper"
   },
   {
+    id: "synopsis",
+    title: "Company - Restoration Hardware",
+    author: "The Synopsis",
+    year: 2023,
+    type: "audio",
+    notes: "Podcast"
+  },
+  {
     id: "road-to-self-renewal",
     title: "The Road to Self-Renewal",
     author: "John Gardner",
@@ -234,6 +290,15 @@ export const shortFormData: ShortFormContent[] = [
     year: 1981,
     type: "text",
     notes: "Paper"
+  },
+
+  {
+    id: "founders",
+    title: "Paul Graham (How To Do Great Work)",
+    author: "Founders",
+    year: 2022,
+    type: "audio",
+    notes: "Podcast"
   },
   {
     id: "scents-and-sensibility",

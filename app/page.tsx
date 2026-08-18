@@ -1,6 +1,5 @@
 import Hero from "@/components/home/Hero";
 import BentoGrid from "@/components/home/BentoGrid";
-import Timeline from "@/components/home/Timeline";
 import Collage from "@/components/home/Collage";
 import CuratedInterests from "@/components/home/CuratedInterests";
 
@@ -14,7 +13,6 @@ export default function Home() {
       <main className="z-10 flex flex-1 w-full max-w-7xl mx-auto flex-col items-start px-6 sm:px-12 md:px-16 lg:w-[85%] pb-40">
         <Hero />
         <BentoGrid />
-        <Timeline />
         <Collage />
         <CuratedInterests />
       </main>

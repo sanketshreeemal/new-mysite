@@ -35,7 +35,7 @@ export default function ShortFormGrid() {
             {/* Top Row: Author / Show Name + Icon */}
             <div className="flex justify-between items-start gap-4 mb-2 sm:mb-2">
               <span className={`font-sans text-[0.65rem] sm:text-xs font-bold uppercase tracking-widest ${authorClasses}`}>
-                {item.author}{!isAudio && item.year ? `, ${item.year}` : ""}
+                {item.author}{item.year ? `, ${item.year}` : ""}
               </span>
               <div className={`opacity-60 flex-shrink-0 ${authorClasses}`}>
                 {isAudio ? (

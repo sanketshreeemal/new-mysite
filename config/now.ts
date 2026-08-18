@@ -1,49 +1,82 @@
 /**
  * Data layer for the Now Pulse component.
- * This config is the single source of truth for both the home page NowPeek
- * and the full /now page.
- *
- * Architecture:
- * - Entries are ordered reverse-chronologically (newest first).
- * - The FIRST entry is always treated as the "current" entry.
- * - `home` contains the condensed summary that renders in the Hero section.
- * - `bullets` contain the full detail items for the /now page.
- *
- * To update: add a new entry at the TOP of the array. Both the home page
- * NowPeek and the /now page will automatically reflect the change.
+ * Single source of truth for the home page NowPeek and the full /now page.
  */
+
+export interface NowSection {
+  title: string;
+  items: string[];
+}
 
 export interface NowEntry {
   /** ISO date string (YYYY-MM-DD) for the entry */
   date: string;
-  /** Short summary bullets shown on the home page Hero */
+  /** Current primary location */
+  location?: string;
+  /** Condensed summary items shown on the home page Hero */
   home: string[];
-  /** Full detail bullets for the /now page */
-  bullets: string[];
+  /** Minimal categorized sections for the /now page */
+  sections: NowSection[];
 }
 
 export const nowEntries: NowEntry[] = [
   {
-    date: "2026-04-12",
+    date: "2026-07-12",
+    location: "Bangalore 🇮🇳",
     home: [
-      "Moving my life to Bangalore",
-      "Building out the Miilo Sales Team",
-      "Setting up SevenQi's investment strategy, allocating capital",
+      "Building Miilo & GTM consulting for Purple Forest",
+      "Setting up SevenQi family office investment structure",
+      "Building new daily routines & friends in Bangalore",
     ],
-    bullets: [
-      "Building Miilo — designing and shipping the AI-driven pet-parent communication ecosystem from 0→1. Currently in private beta with veterinary clinics across Bangalore.",
-      "Working as an Analyst at Rosenberg Research, publishing thought pieces on macroeconomic trends with a contrarian tilt.",
-      "Managing SevenQi — making global allocation decisions across public and private markets for the family office.",
-      "Studying for the next wave of CFA continuing education requirements.",
-      "Rebuilding this personal site from scratch with a design-first philosophy.",
-      "Reading: 'The Alchemy of Finance' by George Soros.",
+    sections: [
+      {
+        title: "Building & Operating",
+        items: [
+          "Miilo — Designing and shipping my veterinary CRM ecosystem from 0→1.",
+          "Purple Forest — Consulting on strategy and go-to-market for a wellness stationery products brand.",
+        ],
+      },
+      {
+        title: "Investment Journey",
+        items: [
+          "SevenQi — Setting up the family office structure and investment philosophy while actively evaluating early-stage venture opportunities.",
+        ],
+      },
+      {
+        title: "Life & Base",
+        items: [
+          "Building new daily routines in Bangalore, adapting to fresh workflows, and building new networks.",
+        ],
+      },
+    ],
+  },
+  {
+    date: "2025-10-15",
+    location: "Toronto 🇨🇦",
+    home: [
+      "Managing portfolio risk at FundThrough",
+      "Prototyping early Miilo architecture",
+    ],
+    sections: [
+      {
+        title: "Institutional",
+        items: [
+          "Managed performance and lending activities across $100M+ portfolio at FundThrough.",
+          "Completed final CFA Level 3 exam requirements.",
+        ],
+      },
+      {
+        title: "Venture",
+        items: [
+          "Drafted initial product requirements and AI workflows for pet care communications.",
+        ],
+      },
     ],
   },
 ];
 
 /**
  * Helper: returns the most recent (current) now entry.
- * Used by both NowPeek (home) and the /now page.
  */
 export function getCurrentNowEntry(): NowEntry {
   return nowEntries[0];
