@@ -62,21 +62,21 @@ const panels = [
     heading: "I Read a Lot",
     subtitle: "Books that have shaped my thinking",
     cta: "My Library",
-    href: "/library",
+    href: "/interests/library",
   },
   {
     id: "travel",
     heading: "I Travel a Lot",
     subtitle: "Corners of the world that furnish my memories",
     cta: "My World",
-    href: "/travel",
+    href: "/interests/travel",
   },
   {
     id: "think",
     heading: "I Think a Lot",
     subtitle: "Ideas I currently subscribe to",
     cta: "My Mind",
-    href: "/ideas",
+    href: "/interests/ideas",
   },
 ] as const;
 
