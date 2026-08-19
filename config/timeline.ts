@@ -47,10 +47,10 @@ export const timelineData: TimelineYearBlock[] = [
         id: "rosenberg",
         lane: "institutional",
         type: "wide",
-        active: true,
+        active: false,
         badge: "Specialist",
         title: "Rosenberg Research",
-        description: "Macro research with a bearish/contrarian tilt, publishing thought pieces on macroeconomic trends.",
+        description: "Macro research with a bearish/contrarian tilt, publishing thought pieces on macroeconomic trends (Feb 2026 – July 2026).",
         topOffset: 60
       },
       {

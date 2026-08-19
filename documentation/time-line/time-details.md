@@ -6,10 +6,10 @@ entries:
     year: 2026
     lane: institutional
     type: wide
-    active: true
+    active: false
     badge: "Analyst"
     title: "Rosenberg Research"
-    description: "Macro research with a bearish/contrarian tilt, publishing thought pieces on macroeconomic trends."
+    description: "Macro research with a bearish/contrarian tilt, publishing thought pieces on macroeconomic trends (Feb 2026 – July 2026)."
 
   - id: miilo
     year: 2025–2026

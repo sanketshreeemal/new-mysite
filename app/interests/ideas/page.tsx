@@ -1,5 +1,6 @@
+import { getAllEssays } from "@/config/essays";
+import IdeasTabFeed from "@/components/ideas/IdeasTabFeed";
 import type { Metadata } from "next";
-import { Lightbulb, BookOpen } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Thinking & Ideas | Sanket Shreemal",
@@ -7,9 +8,11 @@ export const metadata: Metadata = {
 };
 
 export default function IdeasPage() {
+  const essays = getAllEssays();
+
   return (
     <div className="relative min-h-screen bg-bone">
-      {/* Markboard noise / dot-pattern background */}
+      {/* Markboard noise / dot-pattern background (matching Home & Library) */}
       <div
         className="pointer-events-none absolute inset-0 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px] opacity-100"
         aria-hidden="true"
@@ -17,7 +20,7 @@ export default function IdeasPage() {
 
       <main className="relative z-10 w-full max-w-7xl mx-auto px-6 sm:px-12 md:px-16 lg:w-[85%] pt-6 pb-24 md:pt-10 md:pb-32">
         {/* Header */}
-        <header className="max-w-2xl mb-10 sm:mb-14">
+        <header className="max-w-2xl mb-6 sm:mb-12">
           <div className="flex items-center gap-2 text-xs uppercase tracking-widest text-clay font-sans font-semibold mb-2">
             <span>Interests</span>
             <span>/</span>
@@ -27,23 +30,13 @@ export default function IdeasPage() {
             Thinking &amp; Ideas
           </h1>
 
-          <span className="block text-clay italic text-sm sm:text-base">
-            &ldquo;Ideas I currently subscribe to and thoughts in progress.&rdquo;
+          <span className="block mt-2 text-clay italic text-sm sm:text-base">
+            &ldquo;One line of clarity is worth a thousand pages of noise.&rdquo;
           </span>
         </header>
 
-        {/* Content Placeholder / Essay Feed */}
-        <div className="min-h-[40vh] flex flex-col gap-6 max-w-3xl">
-          <div className="p-8 rounded-[4px] bg-white/60 backdrop-blur-md border-[0.5px] border-carbon/10 flex flex-col gap-4">
-            <div className="flex items-center gap-2 text-clay font-sans text-xs uppercase tracking-widest font-semibold">
-              <Lightbulb className="w-4 h-4" />
-              <span>Writing &amp; Essays Coming Soon</span>
-            </div>
-            <p className="font-sans text-base text-carbon/80 leading-relaxed">
-              Currently compiling essays on market structures, capital allocation, and business models in emerging markets. Stay tuned.
-            </p>
-          </div>
-        </div>
+        {/* Tabbed Feed */}
+        <IdeasTabFeed essays={essays} />
       </main>
     </div>
   );
