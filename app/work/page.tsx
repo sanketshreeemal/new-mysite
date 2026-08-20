@@ -1,4 +1,10 @@
 import Timeline from "@/components/home/Timeline";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Work | Sanket Shreemal",
+  description: "Spent the first phase of my career allocating time and dollars for others. Now, I do it for myself.",
+};
 
 export default function WorkPage() {
   return (
@@ -10,15 +16,15 @@ export default function WorkPage() {
       />
 
       <main className="relative z-10 w-full max-w-7xl mx-auto px-6 sm:px-12 md:px-16 lg:w-[85%] pt-6 pb-24 md:pt-10 md:pb-32">
-        {/* Header */}
+        {/* Header matching standard page subtitle design tokens */}
         <header className="max-w-2xl mb-6 sm:mb-12">
-          <h1 className="font-heading text-4xl sm:text-5xl lg:text-6xl font-normal tracking-tight text-carbon leading-[1.1] mb-6">
+          <h1 className="font-heading text-4xl sm:text-5xl lg:text-6xl font-normal tracking-tight text-carbon leading-[1.1] mb-3">
             Work
           </h1>
 
-          <span className="block mt-4 text-clay italic text-sm sm:text-base">
-            &ldquo;Building things in the pursuit of greatness.&rdquo;
-          </span>
+          <p className="font-sans text-clay italic text-sm sm:text-base leading-relaxed">
+            Spent the first phase of my career allocating time and dollars for others. Now, I do it for myself. I love building with both, atoms and bits. Right now, I&apos;m building Miilo and allocating capital through SevenQi.
+          </p>
         </header>
 
         {/* Content Area */}

@@ -17,6 +17,7 @@ export interface TimelineEntry {
   description: string;
   topOffset: number; // Vertical positioning within the year block (in px)
   minHeight?: number; // Optional visual expander — used for multi-year spans
+  yearSpan?: string; // Human readable year range (e.g. "2015 – 2019") used for mobile cards
 }
 
 export interface TimelineBeat {
@@ -44,16 +45,6 @@ export const timelineData: TimelineYearBlock[] = [
     height: 340,
     entries: [
       {
-        id: "rosenberg",
-        lane: "institutional",
-        type: "wide",
-        active: false,
-        badge: "Specialist",
-        title: "Rosenberg Research",
-        description: "Macro research with a bearish/contrarian tilt, publishing thought pieces on macroeconomic trends (Feb 2026 – July 2026).",
-        topOffset: 60
-      },
-      {
         id: "miilo",
         lane: "venture",
         type: "split-left",
@@ -62,7 +53,8 @@ export const timelineData: TimelineYearBlock[] = [
         title: "Miilo",
         description: "Started a digital communication ecosystem to manage and monitor pet health, alongside a social media platform bridging veterinarians and pet owners with news and education.",
         topOffset: 60,
-        minHeight: 360 // Extends ~60px into 2025 block to show 2025→2026 span
+        minHeight: 360,
+        yearSpan: "2025 – Present"
       },
       {
         id: "sevenqi",
@@ -73,7 +65,19 @@ export const timelineData: TimelineYearBlock[] = [
         title: "SevenQi",
         description: "Family office portfolio manager making global allocation decisions in public-private investments.",
         topOffset: 60,
-        minHeight: 140
+        minHeight: 140,
+        yearSpan: "2026 – Present"
+      },
+      {
+        id: "rosenberg",
+        lane: "institutional",
+        type: "wide",
+        active: false,
+        badge: "Specialist",
+        title: "Rosenberg Research",
+        description: "Macro research with a bearish/contrarian tilt, publishing thought pieces on macroeconomic trends (Feb 2026 – July 2026).",
+        topOffset: 60,
+        yearSpan: "2026"
       }
     ],
     beats: []
@@ -97,7 +101,8 @@ export const timelineData: TimelineYearBlock[] = [
         title: "Fundthrough",
         description: "Managed the performance and lending activities of the entire ~$100M portfolio.",
         topOffset: 90,
-        minHeight: 300 // Extends ~130px into 2024 block to show 2024→2025 span
+        minHeight: 300,
+        yearSpan: "2024 – 2025"
       },
       {
         id: "pokerup",
@@ -107,7 +112,8 @@ export const timelineData: TimelineYearBlock[] = [
         badge: "Builder",
         title: "PokerUp",
         description: "Created a real-time multi-player poker application to track performance across games.",
-        topOffset: 120
+        topOffset: 120,
+        yearSpan: "2025"
       }
     ],
     beats: []
@@ -130,7 +136,8 @@ export const timelineData: TimelineYearBlock[] = [
         badge: "Builder",
         title: "UrbanLeases",
         description: "Created an application for landlords to track their real estate portfolio performance, operations, and more.",
-        topOffset: 80
+        topOffset: 80,
+        yearSpan: "2024"
       }
     ],
     beats: [
@@ -168,7 +175,8 @@ export const timelineData: TimelineYearBlock[] = [
         title: "Cadillac Fairview",
         description: "Led strategic planning workflows for CF's industrial and retail asset portfolios ($18B) and developed leasing models to assess portfolio risk and return sensitivity. Created a risk monitoring ERM tool flagged across 32 metrics.",
         topOffset: 0,
-        minHeight: 240 // Extends ~130px into 2022 block to show 2022→2023 span
+        minHeight: 240,
+        yearSpan: "2022 – 2024"
       }
     ],
     beats: [
@@ -218,7 +226,8 @@ export const timelineData: TimelineYearBlock[] = [
         title: "British Columbia Investments (BCI)",
         description: "Investment research directly supported deployment of ~$450 million across global thematic equity strategies. Pitched and built out the E-merging Billions theme coverage.",
         topOffset: 40,
-        minHeight: 190 // Extends ~120px into 2020 block to show 2020→2021 span
+        minHeight: 190,
+        yearSpan: "2020 – 2021"
       },
       {
         id: "royal",
@@ -228,7 +237,8 @@ export const timelineData: TimelineYearBlock[] = [
         badge: "Owner-Operator",
         title: "Royal Embassy Hospitality",
         description: "Spearheaded restructuring of Royal Embassy Hotel during COVID-19, turned around profitability and viability of the asset from recurring losses to 13% net margins. Reached pre-COVID occupancy of 74%.",
-        topOffset: -70
+        topOffset: -70,
+        yearSpan: "2021 – 2022"
       }
     ],
     beats: []
@@ -272,7 +282,8 @@ export const timelineData: TimelineYearBlock[] = [
         title: "B. Int. Economics",
         description: "University of British Columbia. GPA: 3.8. Awarded International Student Scholarship. Thesis: Economic Impact of Domestic Violence in Angola.",
         topOffset: 10,
-        minHeight: 340 // Spans through 2018, 2017, 2016, and into 2015
+        minHeight: 340,
+        yearSpan: "2015 – 2019"
       },
       {
         id: "bnp",
@@ -283,7 +294,8 @@ export const timelineData: TimelineYearBlock[] = [
         title: "BNP Paribas IB",
         description: "Worked on several Indian and Indonesian deals valued between $300 million and $1.3 billion including $1.3B IPO of SBI Life Insurance.",
         topOffset: 10,
-        minHeight: 120 // Visual 2-year span: 2018–2019
+        minHeight: 120,
+        yearSpan: "2018 – 2019"
       }
     ],
     beats: []
@@ -291,8 +303,6 @@ export const timelineData: TimelineYearBlock[] = [
 
   /* ══════════════════════════════════════════════════════════════════
    * 2018 — University Era (continued)
-   * BNP overflow from 2019 fills split-right (~80px)
-   * UBC overflow from 2019 fills split-left
    * ══════════════════════════════════════════════════════════════════ */
   {
     year: 2018,
@@ -303,8 +313,6 @@ export const timelineData: TimelineYearBlock[] = [
 
   /* ══════════════════════════════════════════════════════════════════
    * 2017 — University Era (continued)
-   * Mobiliya Technologies (split-right, visual span 2016–2017)
-   * UBC overflow from 2019 fills split-left
    * ══════════════════════════════════════════════════════════════════ */
   {
     year: 2017,
@@ -319,7 +327,8 @@ export const timelineData: TimelineYearBlock[] = [
         title: "Mobiliya Technologies",
         description: "Sales and Partner Management. Pitched proprietary AI and IoT solutions to North American pipelines.",
         topOffset: 10,
-        minHeight: 120 // Visual 2-year span: 2016–2017
+        minHeight: 120,
+        yearSpan: "2016 – 2017"
       }
     ],
     beats: []
@@ -327,8 +336,6 @@ export const timelineData: TimelineYearBlock[] = [
 
   /* ══════════════════════════════════════════════════════════════════
    * 2016 — University Era (continued)
-   * Mobiliya overflow from 2017 fills split-right (~80px)
-   * UBC overflow from 2019 fills split-left
    * ══════════════════════════════════════════════════════════════════ */
   {
     year: 2016,
@@ -339,7 +346,6 @@ export const timelineData: TimelineYearBlock[] = [
 
   /* ══════════════════════════════════════════════════════════════════
    * 2015 — University Era (start)
-   * UBC overflow from 2019 fills split-left (~70px)
    * ══════════════════════════════════════════════════════════════════ */
   {
     year: 2015,
