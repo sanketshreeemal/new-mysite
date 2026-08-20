@@ -39,3 +39,8 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# raw apple HEIC photos (web uses converted .jpg)
+*.heic
+*.HEIC
+

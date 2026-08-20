@@ -11,14 +11,9 @@ export default function LibraryPage() {
   const [activeTab, setActiveTab] = useState<"long" | "short">("short");
 
   return (
-    <div className="relative min-h-screen bg-bone">
-      {/* Markboard noise / dot-pattern background (matching Home) */}
-      <div
-        className="pointer-events-none absolute inset-0 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px] opacity-100"
-        aria-hidden="true"
-      />
+    <div className="relative">
 
-      <main className="relative z-10 w-full max-w-7xl mx-auto px-6 sm:px-12 md:px-16 lg:w-[85%] pt-6 pb-24 md:pt-10 md:pb-32">
+      <main className="relative z-10 w-full max-w-7xl mx-auto px-6 sm:px-12 md:px-16 lg:w-[85%] pt-6 pb-10 md:pt-10 md:pb-14">
 
         {/* Header */}
         <header className="max-w-2xl mb-6 sm:mb-12">
@@ -32,7 +27,7 @@ export default function LibraryPage() {
           </h1>
 
           <span className="block mt-2 text-clay italic text-sm sm:text-base">
-            &ldquo;One grain of sand is not a mountain, but eventually, after enough grains, a mountain exists.&rdquo;
+            One grain of sand is not a mountain, but eventually, after enough grains, a mountain exists.
           </span>
         </header>
 
@@ -40,22 +35,20 @@ export default function LibraryPage() {
         <div className="flex items-center gap-2 mb-12 sm:mb-16 border-b border-carbon/20 pb-4">
           <button
             onClick={() => setActiveTab("long")}
-            className={`font-sans text-sm font-semibold tracking-wider flex items-center gap-2 px-4 py-2 rounded-full transition-all duration-300 ${
-              activeTab === "long"
+            className={`font-sans text-sm font-semibold tracking-wider flex items-center gap-2 px-4 py-2 rounded-full transition-all duration-300 ${activeTab === "long"
                 ? "bg-carbon text-bone"
                 : "text-carbon/50 hover:text-carbon hover:bg-carbon/5"
-            }`}
+              }`}
           >
             <BookCheck size={16} />
             Long Form
           </button>
           <button
             onClick={() => setActiveTab("short")}
-            className={`font-sans text-sm font-semibold tracking-wider flex items-center gap-2 px-4 py-2 rounded-full transition-all duration-300 ${
-              activeTab === "short"
+            className={`font-sans text-sm font-semibold tracking-wider flex items-center gap-2 px-4 py-2 rounded-full transition-all duration-300 ${activeTab === "short"
                 ? "bg-carbon text-bone"
                 : "text-carbon/50 hover:text-carbon hover:bg-carbon/5"
-            }`}
+              }`}
           >
             <LayoutGrid size={16} />
             Short Form

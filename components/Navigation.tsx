@@ -155,11 +155,19 @@ export default function Navigation() {
           }
 
           /* Normal links */
+          const isContact = link.name === "Contact";
+
           return (
             <Link
               key={link.name}
-              href={link.href!}
-              className="flex items-center gap-2 text-carbon/70 group hover:text-clay transition-colors py-1"
+              href={isContact ? "#footer" : link.href!}
+              onClick={(e) => {
+                if (isContact) {
+                  e.preventDefault();
+                  document.getElementById("footer")?.scrollIntoView({ behavior: "smooth" });
+                }
+              }}
+              className="flex items-center gap-2 text-carbon/70 group hover:text-clay transition-colors py-1 cursor-pointer"
               title={link.name}
               aria-label={link.name}
             >

@@ -11,14 +11,8 @@ export default function IdeasPage() {
   const essays = getAllEssays();
 
   return (
-    <div className="relative min-h-screen bg-bone">
-      {/* Markboard noise / dot-pattern background (matching Home & Library) */}
-      <div
-        className="pointer-events-none absolute inset-0 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px] opacity-100"
-        aria-hidden="true"
-      />
-
-      <main className="relative z-10 w-full max-w-7xl mx-auto px-6 sm:px-12 md:px-16 lg:w-[85%] pt-6 pb-24 md:pt-10 md:pb-32">
+    <div className="relative">
+      <main className="relative z-10 w-full max-w-7xl mx-auto px-6 sm:px-12 md:px-16 lg:w-[85%] pt-6 pb-10 md:pt-10 md:pb-14">
         {/* Header */}
         <header className="max-w-2xl mb-6 sm:mb-12">
           <div className="flex items-center gap-2 text-xs uppercase tracking-widest text-clay font-sans font-semibold mb-2">
