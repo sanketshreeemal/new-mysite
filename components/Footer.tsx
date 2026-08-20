@@ -139,7 +139,7 @@ export default function Footer() {
             <Link href="/interests/library" className="hover:text-clay transition-colors">
               Reading
             </Link>
-            <Link href="/interests/travel" className="hover:text-clay transition-colors">
+            <Link href="/interests/world" className="hover:text-clay transition-colors">
               Travel
             </Link>
             <Link href="/now" className="hover:text-clay transition-colors">

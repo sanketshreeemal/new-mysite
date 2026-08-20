@@ -9,7 +9,7 @@ export default function BentoGrid() {
       {/* Section label */}
       <div className="w-full pb-8 mt-10">
         <p className="section-heading">
-          Bird's Eye View of /Work
+          Bird&apos;s Eye View of /Work
         </p>
         <p className="section-subheading">
           Where tokens, time and capital meet
@@ -17,7 +17,7 @@ export default function BentoGrid() {
       </div>
 
       {/* Desktop Grid (3×3) */}
-      <div className="hidden md:grid md:grid-cols-3 md:grid-rows-[minmax(125px,1fr)_minmax(125px,1fr)_minmax(75px,auto)] gap-3">
+      <div className="hidden md:grid md:grid-cols-3 md:grid-rows-[minmax(150px,1fr)_minmax(150px,1fr)_minmax(110px,auto)] gap-3.5">
         {bentoCards.map((card) => (
           <BentoCard
             key={card.id}
@@ -25,13 +25,14 @@ export default function BentoGrid() {
             title={card.title}
             badge={card.badge}
             subtitle={card.subtitle}
+            href={card.href}
             style={{ gridArea: card.gridArea }}
           />
         ))}
       </div>
 
       {/* Mobile Stack (single column) */}
-      <div className="flex flex-col gap-3 md:hidden">
+      <div className="flex flex-col gap-3.5 md:hidden">
         {[...bentoCards]
           .sort((a, b) => a.mobileOrder - b.mobileOrder)
           .map((card) => (
@@ -41,12 +42,13 @@ export default function BentoGrid() {
               title={card.title}
               badge={card.badge}
               subtitle={card.subtitle}
+              href={card.href}
               className={
                 card.id === "sevenqi"
-                  ? "min-h-[100px]"
+                  ? "min-h-[120px]"
                   : card.id === "miilo"
-                    ? "min-h-[200px]"
-                    : "min-h-[125px]"
+                    ? "min-h-[220px]"
+                    : "min-h-[140px]"
               }
             />
           ))}

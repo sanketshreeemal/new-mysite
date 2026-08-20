@@ -24,16 +24,15 @@ export const nowEntries: NowEntry[] = [
     date: "2026-07-12",
     location: "Bangalore 🇮🇳",
     home: [
-      "Building Miilo & GTM consulting for Purple Forest",
-      "Setting up SevenQi family office investment structure",
-      "Building new daily routines & friends in Bangalore",
+      "GTM for Miilo, market research and customer conversations",
+      "Setting up the SevenQi investment mandate",
+      "Settling into a new Indian routine and building a new social life.",
     ],
     sections: [
       {
         title: "Building & Operating",
         items: [
           "Miilo — Designing and shipping my veterinary CRM ecosystem from 0→1.",
-          "Purple Forest — Consulting on strategy and go-to-market for a wellness stationery products brand.",
         ],
       },
       {

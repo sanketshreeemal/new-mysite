@@ -51,7 +51,7 @@ export const timelineData: TimelineYearBlock[] = [
         active: true,
         badge: "Founder",
         title: "Miilo",
-        description: "Started a digital communication ecosystem to manage and monitor pet health, alongside a social media platform bridging veterinarians and pet owners with news and education.",
+        description: "Building a digital communication ecosystem connecting pet parents with trusted clinics. Streamlining patient intake, structured symptom reviews, and pre-appointment triage that improve medical outcomes for pets.",
         topOffset: 60,
         minHeight: 360,
         yearSpan: "2025 – Present"
@@ -63,7 +63,7 @@ export const timelineData: TimelineYearBlock[] = [
         active: true,
         badge: "Portfolio Manager",
         title: "SevenQi",
-        description: "Family office portfolio manager making global allocation decisions in public-private investments.",
+        description: "Structuring and managing a single family office, operating a fund-of-funds model, and making opportunistic co-investments.",
         topOffset: 60,
         minHeight: 140,
         yearSpan: "2026 – Present"
@@ -75,7 +75,7 @@ export const timelineData: TimelineYearBlock[] = [
         active: false,
         badge: "Specialist",
         title: "Rosenberg Research",
-        description: "Macro research with a bearish/contrarian tilt, publishing thought pieces on macroeconomic trends (Feb 2026 – July 2026).",
+        description: "Macro research with a bearish/contrarian tilt, publishing thought pieces on macroeconomic trends.",
         topOffset: 60,
         yearSpan: "2026"
       }
@@ -99,7 +99,7 @@ export const timelineData: TimelineYearBlock[] = [
         active: false,
         badge: "Senior Portfolio Analyst",
         title: "Fundthrough",
-        description: "Managed the performance and lending activities of the entire ~$100M portfolio.",
+        description: "Managed risk & lending activities across a ~$100M portfolio. Built dynamic client risk models reducing bad debt by 4%, and developed SQL business intelligence dashboards improving decision speed by 60%.",
         topOffset: 90,
         minHeight: 300,
         yearSpan: "2024 – 2025"
@@ -111,7 +111,7 @@ export const timelineData: TimelineYearBlock[] = [
         active: true,
         badge: "Builder",
         title: "PokerUp",
-        description: "Created a real-time multi-player poker application to track performance across games.",
+        description: "Built a social poker application that automates live game tracking, AI ledger settlements, and player performance analytics, eliminating manual bookkeeping for serious games.",
         topOffset: 120,
         yearSpan: "2025"
       }
@@ -135,7 +135,7 @@ export const timelineData: TimelineYearBlock[] = [
         active: true,
         badge: "Builder",
         title: "UrbanLeases",
-        description: "Created an application for landlords to track their real estate portfolio performance, operations, and more.",
+        description: "Created a property management platform for independent landlords, providing real-time portfolio visibility, automated tenant communication, and smart financial reporting.",
         topOffset: 80,
         yearSpan: "2024"
       }
@@ -325,7 +325,7 @@ export const timelineData: TimelineYearBlock[] = [
         active: false,
         badge: "Internship",
         title: "Mobiliya Technologies",
-        description: "Sales and Partner Management. Pitched proprietary AI and IoT solutions to North American pipelines.",
+        description: "Sales and Partner Management. Pitched proprietary AI and IoT solutions to North American companies.",
         topOffset: 10,
         minHeight: 120,
         yearSpan: "2016 – 2017"

@@ -66,7 +66,7 @@ export function getAllEssays(): Essay[] {
         subtitle: data.subtitle || "",
         date: data.date || "",
         readTime: data.readTime || "",
-        category: (data.category as any) || "Book Highlights",
+        category: (data.category as Essay["category"]) || "Book Highlights",
         summary: data.summary || "",
         originalBookLink: data.originalBookLink || undefined,
         content: content.trim(),

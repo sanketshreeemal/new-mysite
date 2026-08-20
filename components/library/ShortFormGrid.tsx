@@ -1,5 +1,5 @@
 import React from "react";
-import { shortFormData, ShortFormContent } from "@/config/papers";
+import { shortFormData } from "@/config/papers";
 import { FileText, Headphones } from "lucide-react";
 
 export default function ShortFormGrid() {

@@ -1,17 +1,18 @@
 "use client";
 
+import { useState, useRef } from "react";
 import { type BadgeType } from "@/config/bento";
+import MiiloVisual from "./bento-visuals/MiiloVisual";
+import PokerUpVisual from "./bento-visuals/PokerUpVisual";
+import UrbanLeasesVisual from "./bento-visuals/UrbanLeasesVisual";
+import SevenQiVisual from "./bento-visuals/SevenQiVisual";
 
-/* ─── Placeholder gradient backgrounds per card theme ─── */
-const placeholderBackgrounds: Record<string, string> = {
-  miilo:
-    "radial-gradient(ellipse at 30% 40%, rgba(220, 160, 130, 0.35) 0%, rgba(245, 215, 195, 0.2) 50%, transparent 80%)",
-  sevenqi:
-    "linear-gradient(135deg, rgba(160, 180, 200, 0.25) 0%, rgba(200, 210, 225, 0.15) 40%, rgba(220, 225, 235, 0.1) 100%)",
-  pokerup:
-    "linear-gradient(160deg, rgba(45, 45, 50, 0.3) 0%, rgba(165, 124, 91, 0.15) 60%, transparent 100%)",
-  urbanleases:
-    "linear-gradient(145deg, rgba(180, 180, 175, 0.2) 0%, rgba(200, 195, 190, 0.15) 50%, rgba(230, 225, 220, 0.1) 100%)",
+/* ─── Visual map for bespoke card canvases ─── */
+const cardVisuals: Record<string, React.ReactNode> = {
+  miilo: <MiiloVisual />,
+  pokerup: <PokerUpVisual />,
+  urbanleases: <UrbanLeasesVisual />,
+  sevenqi: <SevenQiVisual />,
 };
 
 interface BentoCardProps {
@@ -19,6 +20,7 @@ interface BentoCardProps {
   title: string;
   badge: BadgeType;
   subtitle: string;
+  href?: string;
   className?: string;
   style?: React.CSSProperties;
 }
@@ -28,31 +30,90 @@ export default function BentoCard({
   title,
   badge,
   subtitle,
+  href,
   className = "",
   style,
 }: BentoCardProps) {
-  return (
+  const cardRef = useRef<HTMLDivElement>(null);
+  const [mousePos, setMousePos] = useState<{ x: number; y: number } | null>(null);
+
+  const handleMouseMove = (e: React.MouseEvent) => {
+    if (!cardRef.current) return;
+    const rect = cardRef.current.getBoundingClientRect();
+    setMousePos({
+      x: e.clientX - rect.left,
+      y: e.clientY - rect.top,
+    });
+  };
+
+  const handleMouseLeave = () => {
+    setMousePos(null);
+  };
+
+  const content = (
     <div
-      className={`bento-card group relative overflow-hidden ${className}`}
-      style={style}
+      ref={cardRef}
+      onMouseMove={handleMouseMove}
+      onMouseLeave={handleMouseLeave}
+      className="relative w-full h-full"
     >
-      {/* Layer 1 — Canvas Base (placeholder gradient) */}
-      <div
-        className="absolute inset-0 z-0"
-        style={{
-          background: placeholderBackgrounds[id] ?? "transparent",
-        }}
-      />
+      {/* Layer 1 — Bespoke Animated Canvas Visual */}
+      {cardVisuals[id]}
 
-      {/* Layer 2 — Liquid Glass (blur overlay) */}
-      <div className="bento-glass absolute inset-0 z-10" />
+      {/* Layer 2 — Interactive Cursor Spotlight Glow */}
+      {mousePos && (
+        <div
+          className="pointer-events-none absolute inset-0 z-15 transition-opacity duration-300"
+          style={{
+            background: `radial-gradient(350px circle at ${mousePos.x}px ${mousePos.y}px, rgba(165, 124, 91, 0.08), transparent 75%)`,
+          }}
+        />
+      )}
 
-      {/* Layer 3 — Information Layer */}
+      {/* Layer 3 — Crisp Border Sheen */}
+      <div className="absolute inset-0 z-10 border border-black/5 group-hover:border-clay/35 transition-colors duration-500 pointer-events-none" />
+
+      {/* External Link Indicator */}
+      {href && (
+        <div className="absolute top-3.5 right-3.5 z-30 text-[11px] font-sans font-medium text-carbon/40 group-hover:text-clay transition-colors duration-300">
+          <span className="text-xs transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 inline-block">↗</span>
+        </div>
+      )}
+
+      {/* Layer 4 — Information Layer */}
       <div className="relative z-20 flex h-full flex-col justify-end p-4 sm:p-5">
         <span className="bento-badge mb-1">{badge}</span>
-        <h3 className="bento-title mb-1">{title}</h3>
-        <p className="bento-subtitle">{subtitle}</p>
+        <h3 className="bento-title mb-1 flex items-center gap-1.5 font-heading text-lg sm:text-xl font-normal text-carbon">
+          {title}
+        </h3>
+        <p className="bento-subtitle font-sans text-xs text-carbon/75 leading-relaxed max-w-[95%]">
+          {subtitle}
+        </p>
       </div>
+    </div>
+  );
+
+  const cardClasses = `bento-card group relative overflow-hidden rounded-[4px] border-[0.5px] border-carbon/15 bg-white/70 backdrop-blur-md shadow-xs transition-all duration-500 hover:shadow-sm ${
+    href ? "cursor-pointer hover:border-clay/35" : ""
+  } ${className}`;
+
+  if (href) {
+    return (
+      <a
+        href={href}
+        target="_blank"
+        rel="noopener noreferrer"
+        className={cardClasses}
+        style={style}
+      >
+        {content}
+      </a>
+    );
+  }
+
+  return (
+    <div className={cardClasses} style={style}>
+      {content}
     </div>
   );
 }

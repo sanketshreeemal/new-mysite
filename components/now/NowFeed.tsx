@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { nowEntries, NowEntry, NowSection } from "@/config/now";
-import { MapPin, Calendar, ArrowUpRight, History } from "lucide-react";
+import { MapPin, ArrowUpRight, History } from "lucide-react";
 
 export default function NowFeed() {
   const currentEntry = nowEntries[0];

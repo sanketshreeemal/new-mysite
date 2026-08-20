@@ -17,6 +17,9 @@ const newsreader = Newsreader({
 export const metadata: Metadata = {
   title: "Sanket Shreemal | Digital HQ",
   description: "Operator, Builder, Capital Allocator",
+  icons: {
+    icon: "/icon.svg",
+  },
 };
 
 export default function RootLayout({

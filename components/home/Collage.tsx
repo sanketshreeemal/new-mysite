@@ -93,7 +93,7 @@ export default function Collage() {
         The aspect ratio determines the fluid scaling of the entire canvas. 
         Instead of stacking on mobile, it just shrinks down perfectly.
       */}
-      <div className="relative w-full aspect-[16/10] md:aspect-[24/10] lg:aspect-[28/10] max-w-[1600px] mx-auto">
+      <div className="relative w-full aspect-[26/10] max-w-[1600px] mx-auto">
         {collageItems.map((item) => (
           <div
             key={item.id}

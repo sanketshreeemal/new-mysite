@@ -5,29 +5,28 @@ import Link from "next/link";
 import {
   LibraryBig,
   Activity,
-  User,
   Briefcase,
   AtSign,
   BookOpen,
   Compass,
   Lightbulb,
+  LucideIcon,
 } from "lucide-react";
 
 interface SubItem {
   name: string;
   href: string;
-  icon: any;
+  icon: LucideIcon;
 }
 
 interface NavItem {
   name: string;
   href?: string;
-  icon: any;
+  icon: LucideIcon;
   subItems?: SubItem[];
 }
 
 const NAV_LINKS: NavItem[] = [
-  { name: "About", href: "#", icon: User },
   { name: "Work", href: "/work", icon: Briefcase },
   {
     name: "Interests",
@@ -40,7 +39,7 @@ const NAV_LINKS: NavItem[] = [
       },
       {
         name: "Travelling",
-        href: "/interests/travel",
+        href: "/interests/world",
         icon: Compass,
       },
       {
