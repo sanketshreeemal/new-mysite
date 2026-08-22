@@ -18,7 +18,7 @@ export default function WorkPage() {
           </h1>
 
           <p className="font-sans text-clay italic text-sm sm:text-base leading-relaxed">
-            Spent the first phase of my career allocating time and dollars for others. Now, I do it for myself. Atons or bits, I love building with both. Right now, I&apos;m building Miilo and allocating capital through SevenQi.
+            Spent the first phase of my career allocating time and dollars for others. Now, I do it for myself. Atoms or bits, I love building with both. Right now, I&apos;m building Miilo and allocating capital through SevenQi.
           </p>
         </header>
 
